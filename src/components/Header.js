@@ -3,12 +3,14 @@ import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from '../utils/firebase'
 import { useDispatch, useSelector } from 'react-redux'
 import { addUser, removeUser } from "../store/userSlice"
+import { updateGrid } from "../store/gridSlice"
 import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const user = useSelector((store) => store.user)
+
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -23,6 +25,11 @@ const Header = () => {
         });
     }, [])
 
+    const handleGridView = () => {
+        console.log("handleGrid");
+        dispatch(updateGrid())
+    }
+
     const handleSignOut = () => {
         signOut(auth).then(() => {
             navigate("/")
@@ -30,7 +37,6 @@ const Header = () => {
             // An error happened.
             // console.log("error")
         });
-
     }
 
     return (
@@ -38,11 +44,18 @@ const Header = () => {
             <a href='/'>
                 <h1 className='text-3xl italic font-bold '>NewsDekho</h1>
             </a>
-            <h2 className='text-xl font-medium mx-4 py-1 cursor-pointer'
-                onClick={handleSignOut}
-            >
-                {user && "Sign Out"}
-            </h2>
+            <div className='flex'>
+                <h2 className='text-xl font-medium mx-4 py-1 cursor-pointer'
+                    onClick={handleGridView}
+                >
+                    {user && "Grid View"}
+                </h2>
+                <h2 className='text-xl font-medium mx-4 py-1 cursor-pointer'
+                    onClick={handleSignOut}
+                >
+                    {user && "Sign Out"}
+                </h2>
+            </div>
         </div>
     )
 }
