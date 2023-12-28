@@ -4,6 +4,7 @@ import { NEWS_API_KEY, NEWS_API_URL } from '../utils/constants'
 import NewsCard from './NewsCard'
 import { useSelector } from 'react-redux'
 import SavedNews from "./SavedNews";
+import Shimmer from './Shimmer'
 
 const Browse = () => {
   const gridView = useSelector((state) => state.grid.isGridView);
@@ -21,11 +22,10 @@ const Browse = () => {
   }, [])
 
   //early return
-  if (!allNews) return null
+  if (!allNews) return <Shimmer />
 
   return (
     <div>
-
       <div>
         <Header />
       </div>

@@ -5,10 +5,9 @@ import { saveNews } from '../store/savedNewsSlice';
 const NewsCard = ({ data }) => {
     const dispatch = useDispatch();
     const { author, title, urlToImage, url } = data;
-    // console.log(url);
+    
     const handleSavedNews = (data) => {
         dispatch(saveNews(data));
-        // console.log("news Added", data.data.source.name);
     }
 
 

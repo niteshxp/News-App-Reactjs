@@ -34,9 +34,6 @@ const Header = () => {
     const handleSignOut = () => {
         signOut(auth).then(() => {
             navigate("/")
-        }).catch((error) => {
-            // An error happened.
-            // console.log("error")
         });
     }
     const handleSavedNews = () => {

@@ -6,7 +6,7 @@ const SavedNews = () => {
     const dispatch = useDispatch();
     const gridView = useSelector((state) => state.grid.isGridView);
     const savedData = useSelector((store) => store.saveNews.news)
-    console.log(savedData);
+
     const handleClearAll = () => {
         dispatch(clearAll())
     }
