@@ -3,11 +3,11 @@ import Header from './Header'
 import { NEWS_API_KEY, NEWS_API_URL } from '../utils/constants'
 import NewsCard from './NewsCard'
 import { useSelector } from 'react-redux'
-import gridSlice from '../store/gridSlice'
-// import { Link } from 'react-router-dom'
+import SavedNews from "./SavedNews";
 
 const Browse = () => {
   const gridView = useSelector((state) => state.grid.isGridView);
+  const toggleSavedNews = useSelector((state) => state.saveNews.showSavedNews);
   const [allNews, setAllNews] = useState(null);
 
   const fetchNewsData = async () => {
@@ -24,15 +24,20 @@ const Browse = () => {
   if (!allNews) return null
 
   return (
-    <div className='border border-black'>
-      <div className='border border-blue-700'>
+    <div>
+
+      <div>
         <Header />
       </div>
-      <div className={`${gridView && "grid"} flex flex-wrap justify-center border border-yellow-700`}>
-        {/* <Link to=''> */}
-        {allNews.map((news) => <NewsCard key={news.source.id} data={news} />)}
-        {/* </Link> */}
-      </div>
+
+      {toggleSavedNews ? <SavedNews /> :
+        <div className={`${gridView && "grid"} flex flex-wrap justify-center `}>
+          {allNews.map((news, idx) =>
+            < NewsCard key={idx} data={news} />
+          )}
+        </div>}
+
+
     </div >
   )
 }

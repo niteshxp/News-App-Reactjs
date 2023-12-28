@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const gridSlice = createSlice({
     name: "grid",
     initialState: {
-        isGridView: false,
+        isGridView: true,
     },
     reducers: {
         updateGrid: (state) => {
