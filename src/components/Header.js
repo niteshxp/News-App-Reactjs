@@ -40,9 +40,9 @@ const Header = () => {
         dispatch(showSavedNews())
     }
     return (
-        <div className='w-[90%] flex justify-between bg-black text-white my-2 mx-auto py-4 px-2 rounded-lg '>
+        <div className='items-center flex-col py-5 md:w-[90%] flex md:flex-row md:justify-between bg-black text-white md:my-2 mx-auto md:py-4 px-2 rounded-lg '>
             <a href='/'>
-                <h1 className='text-3xl italic font-bold '>NewsDekho</h1>
+                <h1 className='pb-2 text-3xl italic font-bold '>NewsDekho</h1>
             </a>
             <div className='flex'>
 
