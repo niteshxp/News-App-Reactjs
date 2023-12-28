@@ -15,6 +15,7 @@ const Browse = () => {
     const data = await fetch(NEWS_API_URL + NEWS_API_KEY);
     const json = await data.json();
     setAllNews(json.articles)
+    console.log(json);
   }
 
   useEffect(() => {

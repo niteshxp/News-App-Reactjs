@@ -22,10 +22,9 @@ const SavedNews = () => {
                         <h2 className='text-xl font-medium'>{data.title}</h2>
                         <img
                             className='rounded-lg h-40 w-full'
-                            src={data.urlToImage}
+                            src={data.image}
                             alt={data.title}
                         />
-                        <h3 className='text-center mt-2 text-lg italic'>Author : {data.author}</h3>
                     </div>
                 ))}
             </div>

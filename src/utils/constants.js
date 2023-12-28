@@ -1,5 +1,10 @@
-export const NEWS_API_KEY = "d2b93e5e68e04e1c806a53ba0ad57588";
+export const NEWS_API_KEY = "fd5194bd0c7061297f50b1a65f7bd13b"
 
-export const NEWS_API_URL = "https://newsapi.org/v2/top-headlines?country=in&apiKey="
+// "d2b93e5e68e04e1c806a53ba0ad57588";
 
-// "https://newsapi.org/v2/everything?q=Apple&from=2023-12-25&sortBy=popularity&apiKey="       
+
+
+export const NEWS_API_URL = "https://gnews.io/api/v4/top-headlines?category=general&apikey="
+
+// "https://newsapi.org/v2/top-headlines?country=in&apiKey="
+      

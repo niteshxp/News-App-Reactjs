@@ -4,8 +4,8 @@ import { saveNews } from '../store/savedNewsSlice';
 
 const NewsCard = ({ data }) => {
     const dispatch = useDispatch();
-    const { author, title, urlToImage, url } = data;
-    
+    const { author, title, image, url } = data;
+
     const handleSavedNews = (data) => {
         dispatch(saveNews(data));
     }
@@ -16,10 +16,9 @@ const NewsCard = ({ data }) => {
             <h2 className='text-xl font-medium'>{title}</h2>
             <img
                 className='rounded-lg h-40 w-full'
-                src={urlToImage}
+                src={image}
                 alt={title}
             />
-            <h3 className='text-center mt-2 text-lg italic'>Author : {author}</h3>
             <h5 className='text-center cursor-pointer bg-gray-400 rounded-lg my-2'><a target='_blank' href={url}>Click to Read More...</a></h5>
             <button
                 onClick={(e) => e.preventDefault() || handleSavedNews({ data })}

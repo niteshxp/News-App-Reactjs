@@ -67,12 +67,14 @@ const Login = () => {
                     placeholder='Email Address'
                     type='email'
                     ref={email}
+                    value="test@gmail.com"
                 />
                 <input
                     className='mx-7 px-10 py-4 text-center my-4 bg-gray-700 rounded-lg text-white'
                     placeholder='Password'
                     type='password'
                     ref={password}
+                    value='Test@123'
                 />
                 <button
                     className='w-11/12 mx-4 px-10 text-xl font-medium p-2 bg-red-700 rounded-lg'
