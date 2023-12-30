@@ -49,10 +49,10 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className='w-full'>
             <Header />
             <form onSubmit={(e) => e.preventDefault()}
-                className='w-3/12 mt-28 mx-auto rounded-lg bg-black bg-opacity-70 border border-red-600'>
+                className='text-center md:w-3/12 mt-28 md:mx-auto rounded-lg bg-black bg-opacity-70 border border-red-600'>
                 <h1 className='font-semibold text-3xl py-4 text-center' >{isSignUpForm ? "Sign Up" : "Sign In"}</h1>
                 {isSignUpForm &&
                     <input
@@ -63,7 +63,7 @@ const Login = () => {
                     />
                 }
                 <input
-                    className='mx-7 px-10 py-4 text-center my-4 bg-gray-700 rounded-lg text-white'
+                    className=' md:mx-7 px-10 py-4 text-center my-4 bg-gray-700 rounded-lg text-white'
                     placeholder='Email Address'
                     type='email'
                     ref={email}
